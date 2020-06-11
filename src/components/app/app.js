@@ -2,9 +2,9 @@ import React from 'react';
 import EmployeeList from '../employee-list/employee-list';
 
 export default class App extends React.Component {
+
     constructor(props) {
         super(props);
-
         this.state = {
             isLoaded: false,
             items: [],

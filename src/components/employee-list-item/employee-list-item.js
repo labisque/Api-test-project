@@ -14,6 +14,7 @@ export default class EmployeeListItem extends React.Component{
         this.setState ({
             salary: e.target.value
         });
+
     };
 
     onSubmit = (e) => {
@@ -39,6 +40,7 @@ export default class EmployeeListItem extends React.Component{
                 <input type="text" className = "form-control"
                        placeholder="Enter new salary"
                        onChange = {this.salaryChange}
+                       value= {this.state.salary}
                 />
                 <button type="button" className="btn btn-secondary btn-sm btn-change-salary"
                         onClick= {() =>{this.props.onChange(this.props.id , this.state.salary)}}
