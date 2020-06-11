@@ -1,0 +1,26 @@
+.employee-info {
+    width: 350px;
+    font-size: 20px;
+}
+
+.btn-change-salary {
+    width: 200px;
+    margin-right: 7px;
+    margin-left: 7px;
+}
+
+.btn-delete-employee {
+    float: right;
+    height: 45px;
+    width: 90px;
+}
+
+.item-add-form {
+    margin-top: 15px;
+    width: auto;
+}
+
+.item-add-form input {
+    margin-right: 3px;
+    font-size: 20px;
+}
