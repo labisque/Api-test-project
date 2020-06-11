@@ -17,6 +17,14 @@ export default class EmployeeListItem extends React.Component{
 
     };
 
+    onClick = (e) => {
+        e.preventDefault();
+        this.props.onChange(this.props.id , this.state.salary);
+        this.setState ({
+            salary: ''
+        });
+    };
+
     onSubmit = (e) => {
         e.preventDefault();
         this.props.onChange(this.props.id , this.state.salary);
@@ -43,7 +51,7 @@ export default class EmployeeListItem extends React.Component{
                        value= {this.state.salary}
                 />
                 <button type="button" className="btn btn-secondary btn-sm btn-change-salary"
-                        onClick= {() =>{this.props.onChange(this.props.id , this.state.salary)}}
+                        onClick= {this.onClick}
                 >
                     CHANGE SALARY
                 </button>
@@ -60,6 +68,5 @@ export default class EmployeeListItem extends React.Component{
 
         );
     }
-
 };
 
