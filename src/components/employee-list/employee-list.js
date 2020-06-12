@@ -6,8 +6,6 @@ const EmployeeList = ({employeeArray, onDelete, onChange}) => {
     const employees = employeeArray.map( (item) => {
         const {id,...items} = item;
 
-
-
         return (
             <li key={id} className="list-group-item">
                 <EmployeeListItem
