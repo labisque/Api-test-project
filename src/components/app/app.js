@@ -8,7 +8,6 @@ export default class App extends React.Component {
 		this.state = {
 			isLoaded: false,
 			items: [],
-			error: null,
 		}
 		this.updateEmployees();
 	}
@@ -51,11 +50,9 @@ export default class App extends React.Component {
 	}
 
 	render() {
-		const { error, isLoaded, items } = this.state;
+		const { isLoaded, items } = this.state;
 
-		if (error) {
-			return <div>Error, {error.message}</div>
-		} else if (!isLoaded) {
+		 if (!isLoaded) {
 			return <div>Loading...</div>
 		} else {
 			return (
