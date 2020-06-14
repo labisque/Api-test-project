@@ -1,6 +1,7 @@
 import React from 'react'
 import EmployeeListItem from '../employee-list-item/employee-list-item'
 import './employee-list.css'
+
 const EmployeeList = ({ employeeArray, onDelete, onChange }) => {
 	return (
 		<div>
