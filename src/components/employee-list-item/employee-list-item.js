@@ -20,7 +20,7 @@ const EmployeeListItem = ({onDelete, onChange, id, ...items}) => {
 		onChange(id, salary)
 		setSalary('')
 	}
-	
+
 		return (
 			<span>
 				<div className="employee-info">
