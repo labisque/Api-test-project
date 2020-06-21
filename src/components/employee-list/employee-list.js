@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import {connect} from 'react-redux'
+
+import { updateEmployees } from '../../actions/actions'
 import EmployeeListItem from '../employee-list-item/employee-list-item'
 import './employee-list.css'
 
-const EmployeeList = ({ employeeArray, onDelete, onChange }) => {
+const EmployeeList = ({ employeeArray, update}) => {
+
+	useEffect(() =>
+	{
+		update()
+	}, [])
+
 	return (
 		<div>
 			<ul className="list-group list-container">
@@ -13,8 +22,6 @@ const EmployeeList = ({ employeeArray, onDelete, onChange }) => {
 							<EmployeeListItem
 								{...items}
 								id={id}
-								onDelete={() => onDelete(id)}
-								onChange={onChange}
 							/>
 						</li>
 					)
@@ -24,4 +31,18 @@ const EmployeeList = ({ employeeArray, onDelete, onChange }) => {
 	)
 }
 
-export default EmployeeList
+const mapStateToProps = ({employeesList, isLoaded, error}) => {
+	return {
+		employeeArray: employeesList,
+		isLoaded: isLoaded,
+		error: error
+	}
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		update: () => updateEmployees(dispatch)
+	}
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(EmployeeList)
